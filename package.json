@@ -9,7 +9,17 @@
     "lint": "eslint src/",
     "preview": "vite preview",
     "format": "eslint src/ && prettier --write 'src/**/*.{js,ts,tsx}'",
-    "format:fix": "eslint src/ --fix && prettier --write 'src/**/*.{js,ts,tsx}' "
+    "format:fix": "eslint src/ --fix && prettier --write 'src/**/*.{js,ts,tsx}' ",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "prettier --write"
+    ],
+    "**/*.{html,json,css,scss,md,mdx}": [
+      "prettier -w"
+    ]
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
@@ -22,6 +32,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.15.0",
     "@types/node": "^22.10.1",
     "@types/react": "^18.3.12",
@@ -39,6 +51,8 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
     "postcss": "^8.4.49",
     "prettier": "^3.4.1",
     "tailwindcss": "^3.4.15",
