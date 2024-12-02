@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Button } from "./components/ui/button";
+import { useState } from 'react';
+
+import { Button } from './components/ui/button';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,7 +11,7 @@ function App() {
         Vite + React
       </h1>
       <div className="mt-4">
-        <Button onClick={() => setCount((count) => count + 1)}>
+        <Button onClick={() => setCount((prev) => prev + 1)}>
           count is {count}
         </Button>
       </div>
