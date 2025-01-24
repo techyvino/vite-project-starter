@@ -1,10 +1,11 @@
-import { Navigate, NavLink, useRoutes } from 'react-router-dom';
+import { Navigate, useRoutes } from 'react-router-dom';
 
 import AuthLayout from './layout';
 
 const Router = () => {
   const element = useRoutes([
     {
+      path: '/',
       element: <AuthLayout />,
       children: [
         {
@@ -12,34 +13,30 @@ const Router = () => {
           element: (
             <div className="">
               <h1>Home</h1>
-              <NavLink to={'/about'}>About</NavLink>
-              <NavLink to={'/login'}>Login</NavLink>
             </div>
           ),
         },
+        {
+          path: '/about',
+          element: (
+            <div className="">
+              <h1>About</h1>
+            </div>
+          ),
+        },
+        {
+          path: '/profile',
+          element: (
+            <div className="">
+              <h1>Profile</h1>
+            </div>
+          ),
+        },
+        {
+          path: '*',
+          element: <Navigate to={'/'} replace />,
+        },
       ],
-    },
-    {
-      path: '/about',
-      element: (
-        <div className="">
-          <h1>About</h1>
-          <NavLink to={'/'}>Home</NavLink>
-        </div>
-      ),
-    },
-    {
-      path: '/login',
-      element: (
-        <div className="">
-          <h1>Login</h1>
-          <NavLink to={'/'}>Home</NavLink>
-        </div>
-      ),
-    },
-    {
-      path: '*',
-      element: <Navigate to={'/'} replace />,
     },
   ]);
 
