@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const AuthLayout = () => {
   return (
@@ -14,7 +14,6 @@ const AuthLayout = () => {
           <NavLink to="/profile">Register</NavLink>
         </li>
       </ul>
-      <Outlet />
     </div>
   );
 };

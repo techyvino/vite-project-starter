@@ -1,46 +1,39 @@
-import { Navigate, useRoutes } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
-import AuthLayout from './layout';
-
-const Router = () => {
-  const element = useRoutes([
-    {
-      path: '/',
-      element: <AuthLayout />,
-      children: [
-        {
-          path: '/',
-          element: (
-            <div className="">
-              <h1>Home</h1>
-            </div>
-          ),
-        },
-        {
-          path: '/about',
-          element: (
-            <div className="">
-              <h1>About</h1>
-            </div>
-          ),
-        },
-        {
-          path: '/profile',
-          element: (
-            <div className="">
-              <h1>Profile</h1>
-            </div>
-          ),
-        },
-        {
-          path: '*',
-          element: <Navigate to={'/'} replace />,
-        },
-      ],
-    },
-  ]);
-
-  return element;
-};
+export const Router = [
+  {
+    path: '/',
+    title: 'Home',
+    exact: true,
+    element: (
+      <div className="">
+        <h1>Home</h1>
+      </div>
+    ),
+  },
+  {
+    path: '/about',
+    title: 'About',
+    element: (
+      <div className="">
+        <h1>About</h1>
+      </div>
+    ),
+  },
+  {
+    path: '/profile',
+    title: 'Profile',
+    element: (
+      <div className="">
+        <h1>Profile</h1>
+      </div>
+    ),
+  },
+  {
+    path: '*',
+    title: 'Not Found',
+    element: <Redirect to={'/'} />,
+  },
+];
 
 export default Router;
