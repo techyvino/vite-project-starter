@@ -1,9 +1,9 @@
-import { NavLink, Outlet } from 'react-router-dom';
+// import { NavLink, Outlet } from 'react-router-dom';
 
 const AuthLayout = () => {
   return (
     <div>
-      <ul className="flex gap-6">
+      {/* <ul className="flex gap-6">
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -13,8 +13,8 @@ const AuthLayout = () => {
         <li>
           <NavLink to="/profile">Register</NavLink>
         </li>
-      </ul>
-      <Outlet />
+      </ul> */}
+      {/* <Outlet /> */}
     </div>
   );
 };

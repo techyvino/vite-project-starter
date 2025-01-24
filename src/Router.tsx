@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 
 export const Router = [
   {
@@ -28,11 +28,6 @@ export const Router = [
         <h1>Profile</h1>
       </div>
     ),
-  },
-  {
-    path: '*',
-    title: 'Not Found',
-    element: <Navigate to={'/'} replace />,
   },
 ];
 
