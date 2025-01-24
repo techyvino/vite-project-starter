@@ -1,19 +1,39 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import AuthLayout from './layout';
-import Router from './Router';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
     <div className="h-screen flex flex-col items-center justify-center">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<AuthLayout />}>
-            {Router.map((route, index) => (
-              <Route key={index} element={route?.element} path={route?.path} />
-            ))}
-          </Route>
-        </Routes>
+        <Switch>
+          <Route
+            exact
+            path={'/'}
+            component={() => (
+              <div className="flex flex-col items-center justify-center">
+                <h1>Home</h1>
+                <Link to="/sf">Login</Link>
+              </div>
+            )}
+          />
+          <Route
+            path={'/sf'}
+            component={() => (
+              <div className="flex flex-col items-center justify-center">
+                <h1>Salesforce</h1>
+                <Link to="/">Home</Link>
+              </div>
+            )}
+          />
+          <Route
+            path={'/about'}
+            component={() => (
+              <div className="flex flex-col items-center justify-center">
+                <h1>About</h1>
+                <Link to="/">Home</Link>
+              </div>
+            )}
+          />
+        </Switch>
       </BrowserRouter>
     </div>
   );
