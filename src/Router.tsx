@@ -1,4 +1,4 @@
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 export const Router = [
   {
@@ -32,7 +32,7 @@ export const Router = [
   {
     path: '*',
     title: 'Not Found',
-    element: <Redirect to={'/'} />,
+    element: <Navigate to={'/'} replace />,
   },
 ];
 
